@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.stubhub.ecomm</groupId>
+  <artifactId>sh-ecomm-contentresources</artifactId>
+  <version>13.18.0-SNAPSHOT</version>
+  <relativePath>../pom.xml</relativePath>
+  <packaging>war</packaging>
+  <name>Stubhub :: EComm :: contentresources</name>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.samaxes.maven</groupId>
+        <artifactId>minify-maven-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>min-bundle-css</id>
+            <goals>
+              <goal>minify</goal>
+            </goals>
+            <configuration>
+             <jsEngine>closure</jsEngine>
+             <cssSourceDir>tmp</cssSourceDir>
+             <cssSourceFiles>
+                <cssSourceFile>file-1.css</cssSourceFile>
+                <cssSourceFile>file-n.css</cssSourceFile>
+             </cssSourceFiles>
+             <cssFinalFile>style.css</cssFinalFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>min-bundle-js-head</id>
+            <goals>
+              <goal>minify</goal>
+            </goals>
+            <configuration>
+             <jsEngine>closure</jsEngine>
+             <jsSourceDir>tmp</jsSourceDir>
+             <jsSourceFiles>
+                <jsSourceFile>file-1.js</jsSourceFile>
+                <jsSourceFile>file-n.js</jsSourceFile>
+             </jsSourceFiles>
+             <jsFinalFile>scriptHead.js</jsFinalFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>min-bundle-js-footer</id>
+            <goals>
+              <goal>minify</goal>
+            </goals>
+            <configuration>
+             <jsEngine>closure</jsEngine>
+             <jsSourceDir>tmp</jsSourceDir>
+             <jsSourceFiles>
+                <jsSourceFile>file-1.js</jsSourceFile>
+                <jsSourceFile>file-n.js</jsSourceFile>
+             </jsSourceFiles>
+             <jsFinalFile>scriptFooter.js</jsFinalFile>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
