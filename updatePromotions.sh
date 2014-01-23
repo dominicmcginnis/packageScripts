@@ -32,7 +32,7 @@ if { $MODE == "pull" } {
 
 ### Push up files
 if { $MODE == "push" } {
-	spawn scp $FILE $USER@$REMOTE_HOST:/$PUSHDIR/.
+	spawn scp $FILE $USER@$REMOTE_HOST:$PUSHDIR/.
 	expect {
 		password: { 
 			send "$PASS\r"; 

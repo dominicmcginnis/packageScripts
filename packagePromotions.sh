@@ -84,13 +84,11 @@ packageJS () {
 # Push merged/min CSS files to remote server
 pushCSS () {
 	doUpdatePromotions push $HOST $USER $mypassword $CSS_RESULT_FILE $PUSH_TO_DIR
-	echo foo;
 }
 # Push merged/min JS files to remote server
 pushJS () {
-	#doUpdatePromotions push $HOST $USER $mypassword $JS_RESULT_HEAD_FILE $PUSH_TO_DIR
-	#doUpdatePromotions push $HOST $USER $mypassword $JS_RESULT_FOOTER_FILE $PUSH_TO_DIR
-	echo foo;
+	doUpdatePromotions push $HOST $USER $mypassword $JS_RESULT_HEAD_FILE $PUSH_TO_DIR
+	doUpdatePromotions push $HOST $USER $mypassword $JS_RESULT_FOOTER_FILE $PUSH_TO_DIR
 }
 #Execute updatePromotions caputring error and exiting so as to avoid account lockout...
 doUpdatePromotions() {
