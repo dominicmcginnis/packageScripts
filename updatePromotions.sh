@@ -15,7 +15,7 @@ proc do_exit {msg} {
 
 ### Copy down files
 if { $MODE == "pull" } {
-	cd tmp;
+	cd src;
 
 	spawn scp $USER@$REMOTE_HOST:$FILE .
 	expect {
@@ -32,12 +32,6 @@ if { $MODE == "pull" } {
         }
         timeout {do_exit "timed out waiting for prompt"}
     }
-    expect {
-		"Are you sure you want to continue connecting (yes/no)?"  { 
-			send "yes\r"; 
-			exp_continue
-		}
-	}
 
 } 
 
@@ -49,16 +43,14 @@ if { $MODE == "push" } {
 			send "$PASS\r"; 
 			exp_continue
 		}
+		"Are you sure you want to continue connecting (yes/no)?"  { 
+			send "yes\r"; 
+			exp_continue
+		}
         "Permission denied, please try again." {
             do_exit "incorrect password"
         }
         timeout {do_exit "timed out waiting for prompt"}
     }
-    expect {
-		"Are you sure you want to continue connecting (yes/no)?"  { 
-			send "yes\r"; 
-			exp_continue
-		}
-	}
 } 
 
