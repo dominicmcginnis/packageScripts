@@ -23,11 +23,22 @@ if { $MODE == "pull" } {
 			send "$PASS\r"; 
 			exp_continue
 		}
+		"Are you sure you want to continue connecting (yes/no)?"  { 
+			send "yes\r"; 
+			exp_continue
+		}
         "Permission denied, please try again." {
             do_exit "incorrect password"
         }
         timeout {do_exit "timed out waiting for prompt"}
     }
+    expect {
+		"Are you sure you want to continue connecting (yes/no)?"  { 
+			send "yes\r"; 
+			exp_continue
+		}
+	}
+
 } 
 
 ### Push up files
@@ -43,5 +54,11 @@ if { $MODE == "push" } {
         }
         timeout {do_exit "timed out waiting for prompt"}
     }
+    expect {
+		"Are you sure you want to continue connecting (yes/no)?"  { 
+			send "yes\r"; 
+			exp_continue
+		}
+	}
 } 
 
