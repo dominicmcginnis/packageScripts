@@ -45,7 +45,7 @@ packageCSS () {
 		#get Filename
 		filename=`basename $line .css`
 		# minify the files
-		$JAVA_COMMAND -jar $YUI_LIB ./tmp/$filename.css -o ./target/$filename.min.css --charset utf-8
+		$JAVA_COMMAND -jar $YUI_LIB ./src/$filename.css -o ./target/$filename.min.css --charset utf-8
 		# merge to output file
 		cat ./target/$filename.min.css >> $CSS_RESULT_FILE
 		echo '\n' >> $CSS_RESULT_FILE
@@ -61,7 +61,7 @@ packageJS () {
 		#get Filename
 		filename=`basename $line .js`
 		# minify the files
-		$JAVA_COMMAND -jar $CLOSURE_LIB --js ./tmp/$filename.js --js_output_file ./target/$filename.min.js
+		$JAVA_COMMAND -jar $CLOSURE_LIB --js ./src/$filename.js --js_output_file ./target/$filename.min.js
 		# merge to output file
 		cat ./target/$filename.min.js >> $JS_RESULT_HEAD_FILE
 		echo '\n' >> $JS_RESULT_HEAD_FILE
@@ -75,7 +75,7 @@ packageJS () {
 		#get Filename
 		filename=`basename $line .js`
 		# minify the files
-		$JAVA_COMMAND -jar $CLOSURE_LIB --js ./tmp/$filename.js --js_output_file ./target/$filename.min.js
+		$JAVA_COMMAND -jar $CLOSURE_LIB --js ./src/$filename.js --js_output_file ./target/$filename.min.js
 		# merge to output file
 		cat ./target/$filename.min.js >> $JS_RESULT_FOOTER_FILE
 		echo '\n' >> $JS_RESULT_FOOTER_FILE
