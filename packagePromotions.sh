@@ -92,7 +92,7 @@ pushJS () {
 }
 #Execute updatePromotions caputring error and exiting so as to avoid account lockout...
 doUpdatePromotions() {
-		eval ./updatePromotions.sh $1 $2 $3 $4 $5 $6
+		eval ./updatePromotions.expect $1 $2 $3 $4 $5 $6
 		ret_code=$?
 		if [ $ret_code -eq 1 ]
 			then 
