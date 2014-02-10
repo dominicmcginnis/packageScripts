@@ -1,0 +1,4 @@
+/nas/html/stubhub/promotions/scratch/test/mbox.js
+/nas/html/stubhub/promotions/scratch/foresee_v3/foresee-trigger.js
+/nas/html/stubhub/promotions/scratch/lt/getCookie.js
+/nas/html/stubhub/promotions/scratch/lt/omniSearch_02.js

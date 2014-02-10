@@ -1,0 +1,7 @@
+/nas/html/stubhub/promotions/scratch/test/s_code_common_20131024.js
+/nas/html/stubhub/promotions/scratch/lt/bubble.min-1.0.js
+/nas/html/stubhub/promotions/scratch/content/common-1.0.min.js
+/nas/html/stubhub/promotions/scratch/lt/content-1.1.min.js
+/nas/html/stubhub/promotions/scratch/lt/fbTrack_v8.1.js
+/nas/html/stubhub/promotions/scratch/lt/social-content-event-html-3.6.js
+/nas/html/stubhub/promotions/scratch/baynote/baynote-single.js
